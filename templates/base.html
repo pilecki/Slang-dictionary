@@ -118,19 +118,21 @@
 
 
    <!-- container for last added words and the descriptions of words-->
-   
+
    <div class="container my-4">
       <div class="row">
          <div class="col-2 red-broder">
             <h5>Last added words</h5>
-            <p>word</p>
-            <p>word</p>
-            <p>word</p>
-            <p>word</p>
+            {% for word in last_words %}
+
+            <p>{{word.name}}</p>
+
+            {% endfor %}
+
             <br>
             <h5>Statistics:</h5>
             <p>Number of definitions: {{word_counter}}</p>
-            
+
          </div>
          <div class="col-10 red-broder">
             <div class="get_word">
@@ -140,7 +142,7 @@
       </div>
    </div>
 
-<!-- Footer -->
+   <!-- Footer -->
 
    <footer class="fixed-bottom">
       <div class="container text-center">

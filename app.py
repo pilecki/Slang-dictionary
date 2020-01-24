@@ -14,8 +14,9 @@ mongo = PyMongo(app)
 @app.route('/')
 def index():
     
-    return render_template('index.html', word_counter=mongo.db.words.find().count())
+    return render_template('index.html',word_counter=mongo.db.words.find().count(), last_words=mongo.db.words.find().sort([{'date' ,1}]).limit(3))
     
+
 
 
 @app.route('/get_word', methods=['POST'])
