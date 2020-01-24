@@ -1,0 +1,18 @@
+{% extends 'base.html' %} 
+
+{% block content %} 
+ {% for word in words %}
+    
+        
+            <div class="col-9">
+                <h4 class="entry-header">{{word.name}}</h4>
+            </div>
+            
+        
+            <div class="col-12">
+                <p class="entry-description">{{word.meaning}}</p>
+            </div>
+       
+    {% endfor %}
+
+{% endblock %}

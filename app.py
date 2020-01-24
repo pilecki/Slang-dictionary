@@ -12,9 +12,15 @@ mongo = PyMongo(app)
 
 
 @app.route('/')
-@app.route('/get_tasks')
-def get_tasks():
-    return render_template("words.html", words=mongo.db.words.find())
+def index():
+    return render_template('index.html')
+    
+
+
+@app.route('/get_word', methods=['POST'])
+def get_word():
+    word = request.form.get('word_definition')
+    return render_template("word_definition.html", words=mongo.db.words.find({'name': {'$regex': word, '$options': 'i'}}))
 
 
 if __name__ == '__main__':
@@ -22,4 +28,3 @@ if __name__ == '__main__':
             port=int(os.environ.get('PORT')),
             debug=True)
             
-print("MONGO_URI")
