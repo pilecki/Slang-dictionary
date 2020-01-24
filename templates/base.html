@@ -16,7 +16,7 @@
    <!--Navbar -->
    <div class="container mb-4">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-         <a class="navbar-brand" href="#">A Slang Dictionary</a>
+         <a class="navbar-brand" href="{{url_for("index")}}">A Slang Dictionary</a>
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -118,24 +118,29 @@
 
 
    <!-- container for last added words and the descriptions of words-->
+   
    <div class="container my-4">
       <div class="row">
-         <div class="col-2 red-broder">Last added words
-            <div>word</div>
-            <div>word</div>
-            <div>word</div>
-            <div>word</div>
+         <div class="col-2 red-broder">
+            <h5>Last added words</h5>
+            <p>word</p>
+            <p>word</p>
+            <p>word</p>
+            <p>word</p>
+            <br>
+            <h5>Statistics:</h5>
+            <p>Number of definitions: {{word_counter}}</p>
+            
          </div>
          <div class="col-10 red-broder">
-            <div>
+            <div class="get_word">
                {% block content %} {% endblock %}
             </div>
          </div>
       </div>
    </div>
 
-
-
+<!-- Footer -->
 
    <footer class="fixed-bottom">
       <div class="container text-center">

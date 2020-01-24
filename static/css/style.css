@@ -15,7 +15,11 @@
 
 
 /* temporary styling*/
-
+/*
 .red-broder{
     border: red solid 1px;
+}
+*/
+.get_word{
+    height: 60vh;
 }

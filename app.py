@@ -13,7 +13,8 @@ mongo = PyMongo(app)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    
+    return render_template('index.html', word_counter=mongo.db.words.find().count())
     
 
 
