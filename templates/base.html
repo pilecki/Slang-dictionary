@@ -112,10 +112,12 @@
       <form class="" action="{{url_for('get_word')}}" method="POST">
          <input class="form-control size-control" type="search" placeholder="Search" aria-label="Search" id="word_definition" name="word_definition" required>
          <button class="btn btn-secondary my-2 my-sm-0 vertical-control" type="submit">Search</button>
-         <button class="btn btn-secondary my-2 my-sm-0 vertical-control" type="submit">Add</button>
+         <input type="button" class="btn btn-secondary my-2 my-sm-0 vertical-control" onclick="window.location.href = '{{url_for('add_word')}}';" value="Add"/>
       </form>
+      
+      
    </div>
-
+    
 
    <!-- container for last added words and the descriptions of words-->
 

@@ -1,32 +1,33 @@
 {% extends 'base.html' %} {% block content %} {% for word in words %}
 
-<div>
-    <h6 class="">{{word.date}}</h6>
+<div class="container my-4">
+     
+    <div>
+        <h6 class="">{{word.date}}</h6>
+    </div>
+
+    <div>
+        <h4 class="">{{word.name}}</h4>
+    </div>
+
+    <div>
+        <p class="">{{word.meaning}}</p>
+
+    </div>
+    <div>
+        <p>Example:</p>
+        <p class="">{{word.example}}</p>
+
+    </div>
+    <div>
+        <p class="">Author: {{word.author}}</p>
+    </div>
+
+    <div>
+        <button type="button" class="btn btn-secondary btn-sm">edit</button>
+        <button type="button" class="btn btn-secondary btn-sm">delete</button>
+    </div>
 </div>
-
-<div>
-    <h4 class="">{{word.name}}</h4>
-</div>
-
-<div>
-    <p class="">{{word.meaning}}</p>
-
-</div>
-<div>
-    <p>Example:</p>
-    <p class="">{{word.example}}</p>
-
-</div>
-<div>
-   <p class="">Author: {{word.author}}</p>
-</div>
-
-<div>
-    <button type="button" class="btn btn-secondary btn-sm">edit</button>
-    <button type="button" class="btn btn-secondary btn-sm">delete</button>
-</div>
-
-
 
 
 
