@@ -18,15 +18,17 @@ def index():
     
 
 
-
 @app.route('/get_word', methods=['POST'])
 def get_word():
     word = request.form.get('word_definition')
     return render_template("word_definition.html", words=mongo.db.words.find({'name': {'$regex': word, '$options': 'i'}}))
 
+
+
 @app.route('/add_word')
 def add_word():
     return render_template("insert_word.html")
+
 
 @app.route('/insert_word', methods=['POST'])
 def insert_word():
@@ -35,18 +37,46 @@ def insert_word():
     word.insert_one(words_dict)
     return redirect(url_for('conrats_insert'))
 
+
 @app.route('/conrats_insert')
 def conrats_insert():
     return render_template("congrats_insert.html")
     
+
 @app.route('/delete_word/<word_id>')
 def delete_word(word_id):
     mongo.db.words.remove({'_id': ObjectId(word_id)})
     return redirect(url_for('congrats_remove'))
     
+
 @app.route('/congrats_remove')
 def congrats_remove():
     return render_template("congrats_remove.html")
+    
+
+
+@app.route('/edit_word/<word_id>')
+def edit_word(word_id):
+    
+    edited_word = mongo.db.words.find_one({"_id": ObjectId(word_id)})
+    return render_template('edit_word.html', word=edited_word, categories=mongo.db.words.find({},{ "_id": 0, "category": 1}))
+
+
+@app.route('/update_word/<word_id>', methods=['POST'])
+def update_word(word_id):
+    words = mongo.db.words
+    words.update({'_id': ObjectId(word_id)},
+            {
+                'name': request.form.get('name'),
+                'meaning': request.form.get('meaning'),
+                'example': request.form.get('example'),
+                'category': request.form.get('category'),
+                'date': request.form.get('date'),
+                'author': request.form.get('author'),
+
+            })
+    return redirect(url_for('index'))
+
 
 
 
