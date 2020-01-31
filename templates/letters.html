@@ -1,0 +1,42 @@
+{% extends 'base.html' %} {% block content %}
+
+{% for a_words in a %}
+<div class="row">
+    <div class="col-2"></div>
+    
+    <div class="col-8">
+        <div>
+            <h5 class="">{{a_words.name}}</h5>
+        </div>
+        <div>
+            <p class="">{{a_words.meaning}}</p>
+
+        </div>
+        <div>
+            <p>Example:</p>
+            <p class="">{{a_words.example}}</p>
+
+        </div>
+        <div>
+            <p>Category</p>
+            <p class="">{{a_words.category}}</p>
+
+        </div>
+        <div>
+            <p class="">{{a_words.date}}</p>
+
+        </div>
+        <div>
+            <p class="">Author: {{a_words.author}}</p>
+        </div>
+    
+    </div>
+
+    <div class="col-2"></div>
+
+    
+</div>
+
+{% endfor%}
+
+{% endblock %}

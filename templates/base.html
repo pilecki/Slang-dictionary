@@ -61,12 +61,15 @@
           Categories
         </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                     <a class="dropdown-item" href="#">School</a>
-                     <a class="dropdown-item" href="#">Music</a>
-                     <a class="dropdown-item" href="#">Work</a>
-                     <a class="dropdown-item" href="#">Food</a>
-                     <a class="dropdown-item" href="#">Internet</a>
-                     <a class="dropdown-item" href="#">Common</a>
+                    
+                     <a class="dropdown-item" href="{{url_for('categories', cat='Music')}}">Music</a>
+                     <a class="dropdown-item" href="{{url_for('categories', cat='Work')}}">Work</a>
+                     <a class="dropdown-item" href="{{url_for('categories', cat='Food')}}">Food</a>
+                     <a class="dropdown-item" href="{{url_for('categories', cat='Internet')}}">Internet</a>
+                     <a class="dropdown-item" href="{{url_for('categories', cat='Common')}}">Common</a>
+                     <a class="dropdown-item" href="{{url_for('categories', cat='House')}}">House</a>
+                     <a class="dropdown-item" href="{{url_for('categories', cat='School')}}">School</a>
+                     
                   </div>
                </li>
             </ul>
@@ -77,7 +80,7 @@
    <!--List of letters-->
 
    <div class="container text-center my-4">
-      <a class="pr-3" href="#">A</a>
+      <a class="pr-3" href="{{url_for('a')}}">A</a>
       <a class="pr-3" href="#">B</a>
       <a class="pr-3" href="#">C</a>
       <a class="pr-3" href="#">D</a>
@@ -112,38 +115,19 @@
       <form class="" action="{{url_for('get_word')}}" method="POST">
          <input class="form-control size-control" type="search" placeholder="Search" aria-label="Search" id="word_definition" name="word_definition" required>
          <button class="btn btn-secondary my-2 my-sm-0 vertical-control" type="submit">Search</button>
-         <input type="button" class="btn btn-secondary my-2 my-sm-0 vertical-control" onclick="window.location.href = '{{url_for('add_word')}}';" value="Add"/>
+         <input type="button" class="btn btn-secondary my-2 my-sm-0 vertical-control" onclick="window.location.href = '{{url_for('add_word')}}';" value="Add" />
       </form>
-      
-      
+
+
    </div>
-    
+
 
    <!-- container for last added words and the descriptions of words-->
 
+   
    <div class="container my-4">
-      <div class="row">
-         <div class="col-2 red-broder">
-            <h5>Last added words</h5>
-            {% for word in last_words %}
-
-            <p>{{word.name}}</p>
-
-            {% endfor %}
-
-            <br>
-            <h5>Statistics:</h5>
-            <p>Number of definitions: {{word_counter}}</p>
-
-         </div>
-         <div class="col-10 red-broder">
-            <div class="get_word">
-               {% block content %} {% endblock %}
-            </div>
-         </div>
-      </div>
+      {% block content %} {% endblock %}
    </div>
-
    <!-- Footer -->
 
    <footer class="fixed-bottom">
