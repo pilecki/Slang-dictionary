@@ -6,13 +6,14 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <link rel="stylesheet" href="{{url_for("static", filename="css/bootstrap.min.css")}}" type="text/css">
+   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="{{url_for("static", filename="css/style.css")}}" type="text/css">
 
    <title>A slang dictionary</title>
 </head>
 
 <body>
-
+<div class="container-fluid"
    <!--Navbar -->
    <div class="container mb-4">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -28,32 +29,33 @@
           Browse
         </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                     <a class="dropdown-item" href="{{url_for('letters', let='a')}}">A</a>
-                     <a class="dropdown-item" href="{{url_for('letters', let='b')}}">B</a>
-                     <a class="dropdown-item" href="{{url_for('letters', let='c')}}">C</a>
-                     <a class="dropdown-item" href="{{url_for('letters', let='d')}}">D</a>
-                     <a class="dropdown-item" href="{{url_for('letters', let='e')}}">E</a>
-                     <a class="dropdown-item" href="{{url_for('letters', let='f')}}">F</a>
-                     <a class="dropdown-item" href="{{url_for('letters', let='g')}}">G</a>
-                     <a class="dropdown-item" href="{{url_for('letters', let='h')}}">H</a>
-                     <a class="dropdown-item" href="{{url_for('letters', let='i')}}">I</a>
-                     <a class="dropdown-item" href="{{url_for('letters', let='j')}}">J</a>
-                     <a class="dropdown-item" href="{{url_for('letters', let='k')}}">K</a>
-                     <a class="dropdown-item" href="{{url_for('letters', let='l')}}">L</a>
-                     <a class="dropdown-item" href="{{url_for('letters', let='m')}}">M</a>
-                     <a class="dropdown-item" href="{{url_for('letters', let='n')}}">N</a>
-                     <a class="dropdown-item" href="{{url_for('letters', let='o')}}">O</a>
-                     <a class="dropdown-item" href="{{url_for('letters', let='p')}}">P</a>
-                     <a class="dropdown-item" href="{{url_for('letters', let='q')}}">Q</a>
-                     <a class="dropdown-item" href="{{url_for('letters', let='r')}}">R</a>
-                     <a class="dropdown-item" href="{{url_for('letters', let='s')}}">S</a>
-                     <a class="dropdown-item" href="{{url_for('letters', let='t')}}">T</a>
-                     <a class="dropdown-item" href="{{url_for('letters', let='u')}}">U</a>
-                     <a class="dropdown-item" href="{{url_for('letters', let='v')}}">V</a>
-                     <a class="dropdown-item" href="{{url_for('letters', let='w')}}">W</a>
-                     <a class="dropdown-item" href="{{url_for('letters', let='x')}}">X</a>
-                     <a class="dropdown-item" href="{{url_for('letters', let='y')}}">Y</a>
-                     <a class="dropdown-item" href="{{url_for('letters', let='z')}}">Z</a>
+                     
+                     <a class="dropdown-item dropdown-item-browse-letters" href="{{url_for('letters', let='a')}}">A</a>
+                     <a class="dropdown-item dropdown-item-browse-letters" href="{{url_for('letters', let='b')}}">B</a>
+                     <a class="dropdown-item dropdown-item-browse-letters" href="{{url_for('letters', let='c')}}">C</a>
+                     <a class="dropdown-item dropdown-item-browse-letters" href="{{url_for('letters', let='d')}}">D</a>
+                     <a class="dropdown-item dropdown-item-browse-letters" href="{{url_for('letters', let='e')}}">E</a>
+                     <a class="dropdown-item dropdown-item-browse-letters" href="{{url_for('letters', let='f')}}">F</a>
+                     <a class="dropdown-item dropdown-item-browse-letters" href="{{url_for('letters', let='g')}}">G</a>
+                     <a class="dropdown-item dropdown-item-browse-letters" href="{{url_for('letters', let='h')}}">H</a>
+                     <a class="dropdown-item dropdown-item-browse-letters" href="{{url_for('letters', let='i')}}">I</a>
+                     <a class="dropdown-item dropdown-item-browse-letters" href="{{url_for('letters', let='j')}}">J</a>
+                     <a class="dropdown-item dropdown-item-browse-letters" href="{{url_for('letters', let='k')}}">K</a>
+                     <a class="dropdown-item dropdown-item-browse-letters" href="{{url_for('letters', let='l')}}">L</a>
+                     <a class="dropdown-item dropdown-item-browse-letters" href="{{url_for('letters', let='m')}}">M</a>
+                     <a class="dropdown-item dropdown-item-browse-letters" href="{{url_for('letters', let='n')}}">N</a>
+                     <a class="dropdown-item dropdown-item-browse-letters" href="{{url_for('letters', let='o')}}">O</a>
+                     <a class="dropdown-item dropdown-item-browse-letters" href="{{url_for('letters', let='p')}}">P</a>
+                     <a class="dropdown-item dropdown-item-browse-letters" href="{{url_for('letters', let='q')}}">Q</a>
+                     <a class="dropdown-item dropdown-item-browse-letters" href="{{url_for('letters', let='r')}}">R</a>
+                     <a class="dropdown-item dropdown-item-browse-letters" href="{{url_for('letters', let='s')}}">S</a>
+                     <a class="dropdown-item dropdown-item-browse-letters" href="{{url_for('letters', let='t')}}">T</a>
+                     <a class="dropdown-item dropdown-item-browse-letters" href="{{url_for('letters', let='u')}}">U</a>
+                     <a class="dropdown-item dropdown-item-browse-letters" href="{{url_for('letters', let='v')}}">V</a>
+                     <a class="dropdown-item dropdown-item-browse-letters" href="{{url_for('letters', let='w')}}">W</a>
+                     <a class="dropdown-item dropdown-item-browse-letters" href="{{url_for('letters', let='x')}}">X</a>
+                     <a class="dropdown-item dropdown-item-browse-letters" href="{{url_for('letters', let='y')}}">Y</a>
+                     <a class="dropdown-item dropdown-item-browse-letters" href="{{url_for('letters', let='z')}}">Z</a>
                   </div>
                </li>
                <li class="nav-item dropdown">
@@ -63,12 +65,19 @@
                   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     
                      <a class="dropdown-item" href="{{url_for('categories', cat='Music')}}">Music</a>
+                     <div class="dropdown-divider"></div>
                      <a class="dropdown-item" href="{{url_for('categories', cat='Work')}}">Work</a>
+                     <div class="dropdown-divider"></div>
                      <a class="dropdown-item" href="{{url_for('categories', cat='Food')}}">Food</a>
+                     <div class="dropdown-divider"></div>
                      <a class="dropdown-item" href="{{url_for('categories', cat='Internet')}}">Internet</a>
+                     <div class="dropdown-divider"></div>
                      <a class="dropdown-item" href="{{url_for('categories', cat='Common')}}">Common</a>
+                     <div class="dropdown-divider"></div>
                      <a class="dropdown-item" href="{{url_for('categories', cat='House')}}">House</a>
+                     <div class="dropdown-divider"></div>
                      <a class="dropdown-item" href="{{url_for('categories', cat='School')}}">School</a>
+                     
                      
                   </div>
                </li>
@@ -130,13 +139,8 @@
    </div>
    <!-- Footer -->
 
-   <footer class="fixed-bottom">
-      <div class="container text-center">
-         <a href="#">Facebook</a>
-         <a href="#">Twitter</a>
-      </div>
-   </footer>
-
+   
+</div>
    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

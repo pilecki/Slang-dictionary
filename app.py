@@ -14,7 +14,7 @@ mongo = PyMongo(app)
 @app.route('/')
 def index():
     
-    return render_template('index.html', word_counter=mongo.db.words.find().count(), last_words=mongo.db.words.find().sort([{'date',-1}]).limit(3))
+    return render_template('index.html', word_counter=mongo.db.words.find().count(), last_words=mongo.db.words.find().sort([{'date', -1}]).limit(3))
     
 
 
@@ -103,6 +103,8 @@ def categories(cat):
         return render_template("category.html", category=internet_category)
     elif cat == cat:
         return render_template("category.html", category=common_category)
+   
+   
         
 @app.route('/letters/<let>')
 def letters(let):
