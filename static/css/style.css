@@ -46,11 +46,72 @@ body{
     border-top-color: #6b7176;
 }
 
+@media only screen and (max-width: 393px) {
+  a.navbar-brand {
+    display: none;
+  }
+}
+
+/* Links under the Navbar */
+
+
+.letters-under-navbar{
+    display: flex;
+    
+    }
+    
+.letters-under-navbar a{
+    color: #a1a9af;
+    flex-basis: 3.8%;
+    flex-grow: 1;
+    border: 4px solid #c6c6cb;
+    background-color: #343a40;
+    text-decoration: none;
+    margin-right: 1px;
+
+}
+
+.letters-under-navbar a:hover{
+    background-color: #a1a9af;
+    color: #343a40;
+    font-weight: bold;
+}
+@media only screen and (max-width: 992px) {
+  div.letters-under-navbar {
+    display: none;
+  }
+}
+
+
+
 /*    Forms */
 
 .size-control{
     width: 80%;
     display: inline-block;
+}
+
+@media only screen and (max-width: 991px) {
+.mobile-view {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    
+  }
+}
+
+@media only screen and (min-width: 576px) {
+    input.size-control{
+    width: 66%;
+    
+  }
+}
+
+@media only screen and (max-width: 575px) {
+    input.size-control{
+    width: 100%;
+    display: block;
+    
+  }
 }
 
 /*    Buttons */

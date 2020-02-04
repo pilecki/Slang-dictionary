@@ -88,39 +88,40 @@
 
    <!--List of letters-->
 
-   <div class="container text-center my-4">
-      <a class="pr-3" href="{{url_for('letters', let='a')}}">A</a>
-      <a class="pr-3" href="{{url_for('letters', let='b')}}">B</a>
-      <a class="pr-3" href="{{url_for('letters', let='c')}}">C</a>
-      <a class="pr-3" href="{{url_for('letters', let='d')}}">D</a>
-      <a class="pr-3" href="{{url_for('letters', let='e')}}">E</a>
-      <a class="pr-3" href="{{url_for('letters', let='f')}}">F</a>
-      <a class="pr-3" href="{{url_for('letters', let='g')}}">G</a>
-      <a class="pr-3" href="{{url_for('letters', let='h')}}">H</a>
-      <a class="pr-3" href="{{url_for('letters', let='i')}}">I</a>
-      <a class="pr-3" href="{{url_for('letters', let='j')}}">J</a>
-      <a class="pr-3" href="{{url_for('letters', let='k')}}">K</a>
-      <a class="pr-3" href="{{url_for('letters', let='l')}}">L</a>
-      <a class="pr-3" href="{{url_for('letters', let='m')}}">M</a>
-      <a class="pr-3" href="{{url_for('letters', let='n')}}">N</a>
-      <a class="pr-3" href="{{url_for('letters', let='o')}}">O</a>
-      <a class="pr-3" href="{{url_for('letters', let='p')}}">P</a>
-      <a class="pr-3" href="{{url_for('letters', let='q')}}">Q</a>
-      <a class="pr-3" href="{{url_for('letters', let='r')}}">R</a>
-      <a class="pr-3" href="{{url_for('letters', let='s')}}">S</a>
-      <a class="pr-3" href="{{url_for('letters', let='t')}}">T</a>
-      <a class="pr-3" href="{{url_for('letters', let='u')}}">U</a>
-      <a class="pr-3" href="{{url_for('letters', let='v')}}">V</a>
-      <a class="pr-3" href="{{url_for('letters', let='w')}}">W</a>
-      <a class="pr-3" href="{{url_for('letters', let='x')}}">X</a>
-      <a class="pr-3" href="{{url_for('letters', let='y')}}">Y</a>
-      <a class="pr-3" href="{{url_for('letters', let='z')}}">Z</a>
+   <div class="container text-center my-4 letters-under-navbar">
+      
+      <a href="{{url_for('letters', let='a')}}">A</a>
+      <a class="" href="{{url_for('letters', let='b')}}">B</a>
+      <a class="" href="{{url_for('letters', let='c')}}">C</a>
+      <a class="" href="{{url_for('letters', let='d')}}">D</a>
+      <a class="" href="{{url_for('letters', let='e')}}">E</a>
+      <a class="" href="{{url_for('letters', let='f')}}">F</a>
+      <a class="" href="{{url_for('letters', let='g')}}">G</a>
+      <a class="" href="{{url_for('letters', let='h')}}">H</a>
+      <a class="" href="{{url_for('letters', let='i')}}">I</a>
+      <a class="" href="{{url_for('letters', let='j')}}">J</a>
+      <a class="" href="{{url_for('letters', let='k')}}">K</a>
+      <a class="" href="{{url_for('letters', let='l')}}">L</a>
+      <a class="" href="{{url_for('letters', let='m')}}">M</a>
+      <a class="" href="{{url_for('letters', let='n')}}">N</a>
+      <a class="" href="{{url_for('letters', let='o')}}">O</a>
+      <a class="" href="{{url_for('letters', let='p')}}">P</a>
+      <a class="" href="{{url_for('letters', let='q')}}">Q</a>
+      <a class="" href="{{url_for('letters', let='r')}}">R</a>
+      <a class="" href="{{url_for('letters', let='s')}}">S</a>
+      <a class="" href="{{url_for('letters', let='t')}}">T</a>
+      <a class="" href="{{url_for('letters', let='u')}}">U</a>
+      <a class="" href="{{url_for('letters', let='v')}}">V</a>
+      <a class="" href="{{url_for('letters', let='w')}}">W</a>
+      <a class="" href="{{url_for('letters', let='x')}}">X</a>
+      <a class="" href="{{url_for('letters', let='y')}}">Y</a>
+      <a class="" href="{{url_for('letters', let='z')}}">Z</a>
    </div>
 
 
    <!-- Search bar and add button-->
 
-   <div class="container text-center my-5">
+   <div class="container text-center my-5 mobile-view">
       <form class="" action="{{url_for('get_word')}}" method="POST">
          <input class="form-control size-control" type="search" placeholder="Search" aria-label="Search" id="word_definition" name="word_definition" required>
          <button class="btn btn-secondary my-2 my-sm-0 vertical-control" type="submit">Search</button>
