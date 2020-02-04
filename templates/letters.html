@@ -7,10 +7,10 @@
 <div class="row">
     <div class="col-2"></div>
 
-    <div class="col-8">
+    <div class="col-8 word-table">
 
         <div>
-            <h5 class="">{{word.name}}</h5>
+            <h4><strong>{{word.name}}</strong></h4>
         </div>
 
         <div>
@@ -18,13 +18,12 @@
 
         </div>
         <div>
-            <p>Example:</p>
-            <p class="">{{word.example}}</p>
+            <p class="italic-text">{{word.example}}</p>
 
         </div>
         <div>
-            <p>Category</p>
-            <p class="">{{word.category}}</p>
+            <p>Category:  <span>{{word.category}}</span></p>
+            <p class="italic-text"></p>
 
         </div>
         <div>
@@ -35,8 +34,8 @@
             <p class="">Author: {{word.author}}</p>
         </div>
         <div>
-            <a class="btn btn-outline-primary" href="{{url_for('edit_word', word_id=word._id)}}">Edit</a>
-            <a class="btn btn-outline-danger" href="{{url_for('delete_word', word_id=word._id)}}">Delete</a>
+            <a class="btn btn-secondary btn-sm" href="{{url_for('edit_word', word_id=word._id)}}">Edit</a>
+            <a class="btn btn-secondary btn-sm" href="{{url_for('delete_word', word_id=word._id)}}">Delete</a>
 
         </div>
 

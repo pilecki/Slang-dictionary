@@ -5,8 +5,10 @@
 {% block content %}
 
 <div class="row">
-    <div class="col-2 red-broder  d-none d-lg-block">
-        <h6>Last added words</h6>
+    <div class="col-lg-2 d-none d-lg-block">
+        <br>
+        
+        <p><strong>Last added words:</strong></p>
         {% for word in last_words %}
 
         <p>{{word.name}}</p>
@@ -14,34 +16,29 @@
         {% endfor %}
 
         <br>
-        <h6>Statistics:</h6>
+        <p><strong>Statistics:</strong></p> 
         <p>Number of definitions: {{word_counter}}</p>
 
     </div>
-    <div class="col-10">
-        <div class="get_word text-center">
+    <div class="col-lg-10">
+        <div class="">
             <p class="paragraph">
-                How difficult it is to understand other people nowadays, you probably do not need to convince anyone. Speech changes evolve, gives the impression of being lively and is often challenging to keep up with. Words appear, disappear, change the meaning. What
-                yesterday was trendy today is passé. Constant language change makes it impossible to look for new phrases in dictionaries or encyclopedias, which is why this site was created.
+                How difficult it is to understand other people nowadays, you probably do not need to convince anyone. Speech changes evolve, gives the impression of being lively and is often challenging to keep up with. 
             </p>
-            <p class="paragraph">
+            <p class="paragraph">Words appear, disappear, change the meaning. What
+                yesterday was trendy today is passé. Constant language change makes it impossible to look for new phrases in dictionaries or encyclopedias, which is why this site was created.</p>
+            <p class="paragraph d-none d-md-block">
                 Bearing in mind that some words may have different meanings depending on the region or environment, we have allowed you to define words yourself. If you think that the description found on the page is not accurate or in your environment, it means something
                 completely different, write its definition and example in what context you can use it.
             </p>
-            <p class="paragraph">
+            <p class="paragraph d-none d-md-block">
                 The site's task is to collect all newly created words that appear in colloquial speech and present them in a form that is understandable by all.
-            </p>
-
-            <p class="paragraph">
-                If you are a parent, you can check what your child is saying. If your peers use vocabulary that you do not quite understand and do not want to ask directly what it means – use our dictionary. This site is designed to solve these types of problems.
             </p>
             
         </div>
     </div>
 </div>
 
-</div>
-</div>
 
 
 
