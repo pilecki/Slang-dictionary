@@ -2,6 +2,7 @@ import os
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId 
+from datetime import date
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'dictionary'
@@ -27,7 +28,8 @@ def get_word():
 
 @app.route('/add_word')
 def add_word():
-    return render_template("insert_word.html")
+    
+    return render_template("insert_word.html",  today = date.today() )
 
 
 @app.route('/insert_word', methods=['POST'])
@@ -59,7 +61,7 @@ def congrats_remove():
 def edit_word(word_id):
     edited_categories = mongo.db.words.find({},{ "_id": 0, "category": 1}) 
     edited_word = mongo.db.words.find_one({"_id": ObjectId(word_id)})
-    return render_template('edit_word.html', word=edited_word, edited_category=edited_categories)
+    return render_template('edit_word.html', word=edited_word, edited_category=edited_categories, today = date.today() )
 
 @app.route('/update_word/<word_id>', methods=['POST'])
 def update_word(word_id):

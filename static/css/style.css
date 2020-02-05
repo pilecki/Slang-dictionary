@@ -5,6 +5,9 @@ body{
 
 
 /* Navbar */
+
+
+
 .total-width{
     padding: 0;
 }
@@ -66,6 +69,9 @@ body{
     display: none;
   }
 }
+
+
+
 
 /* Links under the Navbar */
 
@@ -192,7 +198,7 @@ background-color: #a1a9af;
   }
 }
 
-/* Main Content */
+/* GENERAL */
 
 .word-table{
     border: 2px solid #343a40;
