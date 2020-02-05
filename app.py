@@ -15,7 +15,11 @@ mongo = PyMongo(app)
 @app.route('/')
 def index():
     
+    print(mongo.db.words.find())
+    print(mongo.db.words.find().sort([{'date', -1}]))
+    print(mongo.db.words.find().limit(3))
     return render_template('index.html', word_counter=mongo.db.words.find().count(), last_words=mongo.db.words.find().sort([{'date', -1}]).limit(3))
+    
     
 
 
@@ -195,5 +199,5 @@ def letters(let):
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
-            debug=False)
+            debug=True)
             
