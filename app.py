@@ -2,6 +2,7 @@ import os
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId 
+from datetime import datetime
 from datetime import date
 
 app = Flask(__name__)
@@ -15,10 +16,7 @@ mongo = PyMongo(app)
 @app.route('/')
 def index():
     
-    print(mongo.db.words.find())
-    print(mongo.db.words.find().sort([{'date', -1}]))
-    print(mongo.db.words.find().limit(3))
-    return render_template('index.html', word_counter=mongo.db.words.find().count(), last_words=mongo.db.words.find().sort([{'date', -1}]).limit(3))
+    return render_template('index.html', word_counter=mongo.db.words.find().count(), last_words=mongo.db.words.find().sort([{'current_datetime', -1}]).limit(3))
     
     
 
@@ -33,7 +31,7 @@ def get_word():
 @app.route('/add_word')
 def add_word():
     
-    return render_template("insert_word.html",  today = date.today() )
+    return render_template("insert_word.html",  today = date.today(), current_datetime = datetime.now() )
 
 
 @app.route('/insert_word', methods=['POST'])
@@ -65,7 +63,7 @@ def congrats_remove():
 def edit_word(word_id):
     edited_categories = mongo.db.words.find({},{ "_id": 0, "category": 1}) 
     edited_word = mongo.db.words.find_one({"_id": ObjectId(word_id)})
-    return render_template('edit_word.html', word=edited_word, edited_category=edited_categories, today = date.today() )
+    return render_template('edit_word.html', word=edited_word, edited_category=edited_categories, today = date.today(), current_datetime = datetime.now())
 
 @app.route('/update_word/<word_id>', methods=['POST'])
 def update_word(word_id):
@@ -78,6 +76,7 @@ def update_word(word_id):
                 'category': request.form.get('category'),
                 'date': request.form.get('date'),
                 'author': request.form.get('author'),
+                'current_datetime': request.form.get('current_datetime'),
 
             })
     return redirect(url_for('index'))
